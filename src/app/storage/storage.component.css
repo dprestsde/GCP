@@ -1,0 +1,18 @@
+#nameStorage{
+    width:700px;
+    
+}
+#HeadingTag{
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.bodyPage{
+    position:relative;
+    left:100px;
+}
+
+.AddButton{
+  position:relative;
+  left : 86%;
+}

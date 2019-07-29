@@ -1,0 +1,115 @@
+
+
+<div class="bodyPage" *ngIf="create">
+  <h3 style="text-align: center">Create a Bucktet</h3>
+  <form>
+      <div class="form-group">
+        <label id="HeadingTag" for="nameStorage">Bucket Name:</label>
+        <input type="text" class="form-control" id="nameStorage"  [(ngModel)]="NameBucket" name="NameBucket"> 
+        <small id="name" class="form-text text-muted">Must be unique across Cloud Storage. If you're serving website content, enter the website domain as the name.
+        </small>
+      </div>
+      <p>{{NameBucket}}</p>
+      <label id="HeadingTag" for="StorageClass">Storage Class:</label>
+      <div class="form-group" id="StorageClass">
+          <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" value="option1" selected>
+              <label class="form-check-label" for="exampleRadios1">
+                Multi-Regional
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios2" value="option2" (click)="StorageClassChange('REGIONAL')">
+              <label class="form-check-label" for="exampleRadios2">
+                  Regional
+              </label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" (click)="StorageClassChange('NEARLINE')">
+              <label class="form-check-label" for="exampleRadios3">
+                  Nearline
+              </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios3" value="option3" (click)="StorageClassChange('COLDLINE')">
+                <label class="form-check-label" for="exampleRadios3">
+                    Coldline
+                </label>
+              </div>
+      </div>
+      <label id="HeadingTag"for="inlineFormCustomSelect">Location:</label>
+      <div class="form-group form-check">
+          <div class="align-items-center">
+              <div class="col-auto my-1" >
+                <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" (change)="selectOption($event.target.value)" [(ngModel)]="selectedLocation" name="selectedLocation" >
+                  <option *ngFor="let loc of LocationList">{{ loc }}</option>
+                </select>
+              </div>
+              <p>{{selectedLocation}}</p>
+      </div>
+      </div>
+      <button type="submit" class="btn btn-primary" style="align-content: center" (click)="CreateBucket()">Create</button>
+
+    </form>
+</div>
+
+<!-- List Of Buckets -->
+<div class="bodyPage" *ngIf="listItem">
+    <button class="btn btn-primary btn-sm AddButton" style="display:flex; justify-content: flex-end" (click)="AddBtn()"><b style="font-weight: 800; font-size: 22px">+</b>
+    </button>
+     <div class="row">
+         <div class="col-5">
+          <b>Name</b>
+         </div>
+         <div class="col-2">
+           <b>Location:</b>
+         </div>
+         <div class="col-2">
+           <b>Storage Class</b>
+         </div>
+         <div class="col-2">
+           <b>Permissions</b>
+         </div>
+     </div>
+     <div *ngFor="let list of list_of_buckets">
+      <div class="row">
+        <div class="col-5">
+         {{list.name}}
+        </div>
+        <div class="col-2">
+          {{list.Location}}
+        </div>
+        <div class="col-2">
+          {{list.storage_class}}
+        </div>
+        <div class="col-2">
+          <a (click)="AddPermissions(list)" style="background-color: lawngreen">Add Permissions</a>
+        </div>
+    </div>
+     </div>
+</div>
+
+<div class="bodyPage" *ngIf="AddPermissionForm">
+    <form>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Role</label>
+          <div class="form-group form-check">
+              <div class="align-items-center">
+                  <div class="col-auto my-1" >
+                    <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" [(ngModel)]="selectedRole" name="selectedRole" >
+                      
+                      <option *ngFor="let role of RoleList">{{ role.title }}</option>
+                    </select>
+                  </div>
+                  <p>{{selectedRole}}</p>
+          </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="exampleInputPassword1">Email of Member</label>
+          <input type="text" class="form-control" id="exampleInputPassword1" placeholder="email" [(ngModel)]="member" name="member">
+        </div>
+       
+        <button type="submit" class="btn btn-primary" (click)="SetIamRole()">Submit</button>
+      </form>
+</div>

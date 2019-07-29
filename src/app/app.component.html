@@ -1,21 +1,136 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<nav class="navbar navbar-expand-lg navbar-custom">
+    <a class="navbar-brand" href="#" style="color:#3498DB; font-weight: 550">GCMS</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Users</a>
+        </li>
+      </ul>
+      <div class="form-inline my-2 my-lg-0">
+          <div class="mr-md-2">
+              <i class="fas fa-bell fa-sm"> </i>
+            </div>
+            <div class="mr-md-2"></div>
+            <div class="mr-md-2"> </div>
+
+            <div class="mr-md-2">
+                <i class="fas fa-tasks fa-sm"> </i>
+              </div>
+              <div class="mr-md-2"> </div>
+              <div class="mr-md-2"> </div>
+              <div class="mr-md-2">
+                  <i class="fas fa-envelope-open-text fa-sm"></i>
+                </div>
+                <div class="mr-md-2"> </div>
+                <div class="mr-md-2"> </div>
+                <div class="mr-md-2"> 
+                    <i class="fas fa-cogs fa-sm"></i>
+                </div>
+                <div class="mr-md-2"> </div>
+                <div class="mr-md-2"> </div>
+                <div class="mr-md-2"><i class="fas fa-users fa-sm"></i> </div>
+                <div class="mr-md-2"> </div>
+                
+      </div>
+    </div>
+  </nav>
+
+
+<br>
+
+
+<!-- Side Nav Starts Here -->
+<div class="area"></div><nav class="main-menu">
+    <ul>
+        <li>
+            <a href="http://justinfarrow.com">
+                <i class="fa fa-home fa-2x"></i>
+                <span class="nav-text">
+                    Dashboard
+                </span>
+            </a>
+          
+        </li>
+        <li class="has-subnav">
+            <a href="#">
+                <i class="fa fa-qrcode fa-2x"></i>
+                <span class="nav-text">
+                    Compute Engine
+                </span>
+            </a>
+            
+        </li>
+        <li class="has-subnav">
+            <a href="#">
+               <i class="fa fa-inbox fa-2x"></i>
+                <span class="nav-text">
+                    APIsand Services
+                </span>
+            </a>
+            
+        </li>
+        <li class="has-subnav" >
+            <a routerLink="/ServiceAccounts">
+               <i class="fa fa-folder-open fa-2x"></i>
+                <span class="nav-text">
+                    Service Account
+                </span>
+            </a>
+           
+        </li>
+        <li>
+            <a routerLink="/storage">
+                <i class="fa fa-bar-chart-o fa-2x"></i>
+                <span class="nav-text">
+                    Storage
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+                <i class="fa fa-desktop fa-2x"></i>
+                <span class="nav-text">
+                   Kubernates Engine
+                </span>
+            </a>
+        </li>
+        <li>
+           <a href="#">
+               <i class="fa fa-table fa-2x"></i>
+                <span class="nav-text">
+                    VPC Engine
+                </span>
+            </a>
+        </li>
+        <li>
+           <a href="#">
+                <i class="fa fa-map-marker fa-2x"></i>
+                <span class="nav-text">
+                    Profiler
+                </span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+               <i class="fa fa-info fa-2x"></i>
+                <span class="nav-text">
+                    Documentation
+                </span>
+            </a>
+        </li>
+    </ul>
+
+</nav>
 
 <router-outlet></router-outlet>
+<!-- Routed components go here -->
